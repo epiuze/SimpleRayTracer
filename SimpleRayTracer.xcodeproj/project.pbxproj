@@ -7,27 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92AAFF3C16FE70B800C1F985 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92AAFF3B16FE70B800C1F985 /* main.cpp */; };
-		92AAFF3E16FE70B800C1F985 /* SimpleRayTracer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92AAFF3D16FE70B800C1F985 /* SimpleRayTracer.1 */; };
+		92AAFF4B16FE8B8800C1F985 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AAFF4A16FE8B8800C1F985 /* OpenGL.framework */; };
+		92AAFF4D16FE8B8C00C1F985 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AAFF4C16FE8B8C00C1F985 /* GLUT.framework */; };
+		92AAFF5316FE967D00C1F985 /* RayTracer.c in Sources */ = {isa = PBXBuildFile; fileRef = 92AAFF5216FE967C00C1F985 /* RayTracer.c */; };
+		92AAFF5516FE99A400C1F985 /* raycast.vp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92AAFF5116FE95EA00C1F985 /* raycast.vp */; };
+		92AAFF5616FE99A900C1F985 /* raycast.fp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92AAFF5016FE95E300C1F985 /* raycast.fp */; };
+		92AAFF5716FE99C500C1F985 /* ShaderUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 92AAFF4516FE712C00C1F985 /* ShaderUtil.c */; };
+		92AAFF5916FEA1A500C1F985 /* GLUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 92AAFF5816FEA1A500C1F985 /* GLUtil.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		92AAFF3616FE70B800C1F985 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
 			files = (
-				92AAFF3E16FE70B800C1F985 /* SimpleRayTracer.1 in CopyFiles */,
+				92AAFF5516FE99A400C1F985 /* raycast.vp in CopyFiles */,
+				92AAFF5616FE99A900C1F985 /* raycast.fp in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		92AAFF3816FE70B800C1F985 /* SimpleRayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleRayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
-		92AAFF3B16FE70B800C1F985 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		92AAFF3D16FE70B800C1F985 /* SimpleRayTracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SimpleRayTracer.1; sourceTree = "<group>"; };
+		92AAFF4516FE712C00C1F985 /* ShaderUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtil.c; sourceTree = "<group>"; };
+		92AAFF4716FE716100C1F985 /* vPassThrough.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vPassThrough.glsl; sourceTree = "<group>"; };
+		92AAFF4816FE718E00C1F985 /* fPassThrough.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fPassThrough.glsl; sourceTree = "<group>"; };
+		92AAFF4A16FE8B8800C1F985 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		92AAFF4C16FE8B8C00C1F985 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		92AAFF4E16FE8BAD00C1F985 /* SimpleGLWindow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SimpleGLWindow.c; sourceTree = "<group>"; };
+		92AAFF5016FE95E300C1F985 /* raycast.fp */ = {isa = PBXFileReference; lastKnownFileType = text; path = raycast.fp; sourceTree = "<group>"; };
+		92AAFF5116FE95EA00C1F985 /* raycast.vp */ = {isa = PBXFileReference; lastKnownFileType = text; path = raycast.vp; sourceTree = "<group>"; };
+		92AAFF5216FE967C00C1F985 /* RayTracer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RayTracer.c; sourceTree = "<group>"; };
+		92AAFF5416FE97E100C1F985 /* ShaderUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderUtil.h; sourceTree = "<group>"; };
+		92AAFF5816FEA1A500C1F985 /* GLUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GLUtil.c; sourceTree = "<group>"; };
+		92AAFF5A16FEA1B900C1F985 /* GLUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLUtil.h; sourceTree = "<group>"; };
+		92AAFF5B16FEA6BE00C1F985 /* RayTracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayTracer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92AAFF4D16FE8B8C00C1F985 /* GLUT.framework in Frameworks */,
+				92AAFF4B16FE8B8800C1F985 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +64,8 @@
 		92AAFF2F16FE70B800C1F985 = {
 			isa = PBXGroup;
 			children = (
+				92AAFF4C16FE8B8C00C1F985 /* GLUT.framework */,
+				92AAFF4A16FE8B8800C1F985 /* OpenGL.framework */,
 				92AAFF3A16FE70B800C1F985 /* SimpleRayTracer */,
 				92AAFF3916FE70B800C1F985 /* Products */,
 			);
@@ -60,10 +82,28 @@
 		92AAFF3A16FE70B800C1F985 /* SimpleRayTracer */ = {
 			isa = PBXGroup;
 			children = (
-				92AAFF3B16FE70B800C1F985 /* main.cpp */,
+				92AAFF5216FE967C00C1F985 /* RayTracer.c */,
+				92AAFF5B16FEA6BE00C1F985 /* RayTracer.h */,
+				92AAFF5816FEA1A500C1F985 /* GLUtil.c */,
+				92AAFF5A16FEA1B900C1F985 /* GLUtil.h */,
+				92AAFF4E16FE8BAD00C1F985 /* SimpleGLWindow.c */,
+				92AAFF4416FE711A00C1F985 /* shader */,
 				92AAFF3D16FE70B800C1F985 /* SimpleRayTracer.1 */,
 			);
 			path = SimpleRayTracer;
+			sourceTree = "<group>";
+		};
+		92AAFF4416FE711A00C1F985 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				92AAFF5116FE95EA00C1F985 /* raycast.vp */,
+				92AAFF5016FE95E300C1F985 /* raycast.fp */,
+				92AAFF4816FE718E00C1F985 /* fPassThrough.glsl */,
+				92AAFF4716FE716100C1F985 /* vPassThrough.glsl */,
+				92AAFF4516FE712C00C1F985 /* ShaderUtil.c */,
+				92AAFF5416FE97E100C1F985 /* ShaderUtil.h */,
+			);
+			name = shader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,7 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AAFF3C16FE70B800C1F985 /* main.cpp in Sources */,
+				92AAFF5316FE967D00C1F985 /* RayTracer.c in Sources */,
+				92AAFF5716FE99C500C1F985 /* ShaderUtil.c in Sources */,
+				92AAFF5916FEA1A500C1F985 /* GLUtil.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
