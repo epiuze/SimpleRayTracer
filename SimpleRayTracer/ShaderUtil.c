@@ -130,9 +130,8 @@ GLuint initShader(const GLchar* vShaderFile, const GLchar* fShaderFile)
         exit(EXIT_FAILURE);
     }
     
-    /* use program object */
-    
-    glUseProgram(program);
+    // let the caller handle the binding of the shader
+//    glUseProgram(program);
 
     // Done
     return program;

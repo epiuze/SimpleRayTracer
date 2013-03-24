@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		928D622316FF53D400C35551 /* passThrough.fp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92AAFF4816FE718E00C1F985 /* passThrough.fp */; };
+		928D622416FF53D500C35551 /* passThrough.vp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92AAFF4716FE716100C1F985 /* passThrough.vp */; };
 		92AAFF4B16FE8B8800C1F985 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AAFF4A16FE8B8800C1F985 /* OpenGL.framework */; };
 		92AAFF4D16FE8B8C00C1F985 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AAFF4C16FE8B8C00C1F985 /* GLUT.framework */; };
 		92AAFF5316FE967D00C1F985 /* RayTracer.c in Sources */ = {isa = PBXBuildFile; fileRef = 92AAFF5216FE967C00C1F985 /* RayTracer.c */; };
@@ -25,6 +27,8 @@
 			files = (
 				92AAFF5516FE99A400C1F985 /* raycast.vp in CopyFiles */,
 				92AAFF5616FE99A900C1F985 /* raycast.fp in CopyFiles */,
+				928D622416FF53D500C35551 /* passThrough.vp in CopyFiles */,
+				928D622316FF53D400C35551 /* passThrough.fp in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,8 +38,8 @@
 		92AAFF3816FE70B800C1F985 /* SimpleRayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleRayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AAFF3D16FE70B800C1F985 /* SimpleRayTracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SimpleRayTracer.1; sourceTree = "<group>"; };
 		92AAFF4516FE712C00C1F985 /* ShaderUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtil.c; sourceTree = "<group>"; };
-		92AAFF4716FE716100C1F985 /* vPassThrough.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vPassThrough.glsl; sourceTree = "<group>"; };
-		92AAFF4816FE718E00C1F985 /* fPassThrough.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fPassThrough.glsl; sourceTree = "<group>"; };
+		92AAFF4716FE716100C1F985 /* passThrough.vp */ = {isa = PBXFileReference; lastKnownFileType = text; path = passThrough.vp; sourceTree = "<group>"; };
+		92AAFF4816FE718E00C1F985 /* passThrough.fp */ = {isa = PBXFileReference; lastKnownFileType = text; path = passThrough.fp; sourceTree = "<group>"; };
 		92AAFF4A16FE8B8800C1F985 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		92AAFF4C16FE8B8C00C1F985 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		92AAFF4E16FE8BAD00C1F985 /* SimpleGLWindow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SimpleGLWindow.c; sourceTree = "<group>"; };
@@ -98,8 +102,8 @@
 			children = (
 				92AAFF5116FE95EA00C1F985 /* raycast.vp */,
 				92AAFF5016FE95E300C1F985 /* raycast.fp */,
-				92AAFF4816FE718E00C1F985 /* fPassThrough.glsl */,
-				92AAFF4716FE716100C1F985 /* vPassThrough.glsl */,
+				92AAFF4816FE718E00C1F985 /* passThrough.fp */,
+				92AAFF4716FE716100C1F985 /* passThrough.vp */,
 				92AAFF4516FE712C00C1F985 /* ShaderUtil.c */,
 				92AAFF5416FE97E100C1F985 /* ShaderUtil.h */,
 			);
@@ -258,6 +262,7 @@
 				92AAFF4316FE70B800C1F985 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

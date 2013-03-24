@@ -24,8 +24,8 @@ GLuint genbindFrameBuffer();
 // Generate and bind a render buffer
 GLuint genbindRenderBuffer(GLuint width, GLuint height);
 
-GLuint genbindTexture2D(GLuint activeSampler2D, GLuint width, GLuint height, GLuint internalFormat, GLuint format, GLuint type);
+GLuint genbindTexture2D(GLuint width, GLuint height, GLuint internalFormat, GLuint format, GLuint type);
 
-GLuint genbindTexture2DRGBAF(GLuint activeSampler2D, GLuint width, GLuint height);
+GLuint genbindTexture2DRGBAF(GLuint width, GLuint height);
 
 #endif

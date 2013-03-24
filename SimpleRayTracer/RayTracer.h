@@ -21,6 +21,14 @@ void renderRayCast();
 void vertex(float x, float y, float z);
 void setTexture3DParam(int activeSamplerTexture);
 void setVolume();
+void initShaders();
+void renderScreen();
+void stopMotion(int x, int y);
+void startMotion(int x, int y);
+void mouseButton(int button, int state, int x, int y);
+
+void enable_renderbuffers();
+void disable_renderbuffers();
 
 void init();
 
