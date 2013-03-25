@@ -41,6 +41,8 @@ void mouseButton(int button, int state, int x, int y);
 void enable_renderbuffers();
 void disable_renderbuffers();
 
+void createVolume();
+
 void init();
 
 // Vars

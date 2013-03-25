@@ -132,6 +132,10 @@ GLuint initShader(const GLchar* vShaderFile, const GLchar* fShaderFile)
     
     // let the caller handle the binding of the shader
 //    glUseProgram(program);
+    
+    // Delete shaders
+    glDeleteShader(fShader);
+    glDeleteShader(vShader);
 
     // Done
     return program;

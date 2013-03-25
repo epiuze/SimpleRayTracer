@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleRayTracer/RayTracer.c"
-         timestampString = "385911137.450027"
+         timestampString = "385914305.95879"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "589"
-         endingLineNumber = "589"
+         startingLineNumber = "598"
+         endingLineNumber = "598"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -32,11 +32,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleRayTracer/RayTracer.c"
-         timestampString = "385911137.450027"
+         timestampString = "385914254.364632"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "229"
-         endingLineNumber = "229"
+         startingLineNumber = "235"
+         endingLineNumber = "235"
          landmarkName = "setVolume()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -45,11 +45,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleRayTracer/RayTracer.c"
-         timestampString = "385911137.450027"
+         timestampString = "385914254.364632"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "227"
-         endingLineNumber = "227"
+         startingLineNumber = "233"
+         endingLineNumber = "233"
          landmarkName = "setVolume()"
          landmarkType = "7">
       </FileBreakpoint>

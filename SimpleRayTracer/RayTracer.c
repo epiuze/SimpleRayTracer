@@ -27,11 +27,13 @@ bool trackingMouse = false;
 bool redrawContinue = false;
 bool trackballMove = false;
 
-#define VOLUME_TEX_SIZE 128
-int size = VOLUME_TEX_SIZE*VOLUME_TEX_SIZE*VOLUME_TEX_SIZE* 4;
+#define VOLUME_TEX_SIZE 64
+const int size = VOLUME_TEX_SIZE*VOLUME_TEX_SIZE*VOLUME_TEX_SIZE* 4;
 
 GLuint frameBuffer, renderBuffer;
 GLuint volumeTexture, backfaceTexture, imageTexture;
+
+GLuint backTextureUnit = 0, volumeTextureUnit = 1;
 
 GLuint passthroughProgram, shaderProgram;
 
@@ -155,11 +157,9 @@ void renderRayCast() {
     glUseProgram(shaderProgram);
     
     // Bind the volume samplers
-    GLuint volumeTextureUnit = 1;
     glUniform1i(uniform_volume_tex, volumeTextureUnit);
-    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0 + 1, volumeTextureUnit);
+    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0 + volumeTextureUnit, volumeTextureUnit);
 
-    GLuint backTextureUnit = 0;
     glUniform1i(uniform_tex, backTextureUnit);
     bindTexture(backfaceTexture, GL_TEXTURE_2D, GL_TEXTURE0, backTextureUnit);
     
@@ -185,9 +185,15 @@ void renderRayCast() {
 }
 
 // create a test volume texture, here you could load your own volume
+unsigned char* data;
+
+void createVolume() {
+    data = (unsigned char *)malloc(size * sizeof(unsigned char));
+}
+
 void setVolume() {
 //	unsigned char data[size] = {};
-    unsigned char* data = (unsigned char *)malloc(size * sizeof(unsigned char));
+//    data = (unsigned char *)malloc(size * sizeof(unsigned char));
 
     float rmax = RAND_MAX;
     srand(time(NULL));
@@ -228,14 +234,14 @@ void setVolume() {
 //	glPixelStorei(GL_UNPACK_ALIGNMENT,1);
 	glGenTextures(1, &volumeTexture);
     
-    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0 + 1, 1);
+    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0 + volumeTextureUnit, volumeTextureUnit);
 //	glBindTexture(GL_TEXTURE_3D, volumeTexture);
     
     setTexture3DParam();
     
 	glTexImage3D(GL_TEXTURE_3D, 0,GL_RGBA, VOLUME_TEX_SIZE, VOLUME_TEX_SIZE,VOLUME_TEX_SIZE,0, GL_RGBA, GL_UNSIGNED_BYTE,data);
     
-    free(data);
+//    free(data);
 }
 
 void setTexture3DParam() {
@@ -380,8 +386,6 @@ void initShaders() {
     
     // Create render buffer
     renderBuffer = genbindRenderBuffer(width, height);
-    
-    setVolume();
     
     // Set uniforms
     shaderProgram = initShader("./raycast.vp", "./raycast.fp");
@@ -577,12 +581,17 @@ int main(int argc, char** argv) {
     glutReshapeFunc(reshape);
     glutKeyboardFunc(keyboard);
     
+//    glutIdleFunc(setVolume);
+    
     glutMouseFunc(mouseButton);
     glutMotionFunc(mouseMotion);
 
     // Initialize program
     init();
     
+    createVolume();
+    setVolume();
+
     glutMainLoop();
     
     return 0;
