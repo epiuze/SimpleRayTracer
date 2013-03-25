@@ -12,14 +12,13 @@
 
 #define DEFAULT_STEP_SIZE 0.005
 #define DEFAULT_SCALE 3
-#define DEFAULT_EMISSIVITY 0.15
+#define DEFAULT_EMISSIVITY 0.01
 #define DEFAULT_DEPTH 300
-#define bool int
-#define false 0
-#define true 1
 
-static GLuint width = 500;
-static GLuint height= 500;
+float emissivity = DEFAULT_EMISSIVITY;
+
+static GLuint width = 800;
+static GLuint height= 800;
 
 GLuint sampler = 0;
 
@@ -155,25 +154,25 @@ void renderRayCast() {
     
     glUseProgram(shaderProgram);
     
-    // Bind the samplers
-    GLuint volumeTextureUnit = 0;
+    // Bind the volume samplers
+    GLuint volumeTextureUnit = 1;
     glUniform1i(uniform_volume_tex, volumeTextureUnit);
-    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0, volumeTextureUnit);
-    
-    GLuint backTextureUnit = 1;
+    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0 + 1, volumeTextureUnit);
+
+    GLuint backTextureUnit = 0;
     glUniform1i(uniform_tex, backTextureUnit);
     bindTexture(backfaceTexture, GL_TEXTURE_2D, GL_TEXTURE0, backTextureUnit);
     
-    glUniform1i(uniform_drawBack, 0);
-    glUniform1i(uniform_drawFront, 0);
-    glUniform1i(uniform_drawRays, 0);
+    glUniform1i(uniform_drawBack, drawBack);
+    glUniform1i(uniform_drawFront, drawFront);
+    glUniform1i(uniform_drawRays, drawRays);
 
     // Set uniforms
     glUniform1f(uniform_stepSize, DEFAULT_STEP_SIZE);
     glUniform1f(uniform_scale, DEFAULT_SCALE);
     glUniform1f(uniform_epsilon, 0);
     glUniform1i(uniform_rayDepth, DEFAULT_DEPTH);
-    glUniform1f(uniform_emissivity, DEFAULT_EMISSIVITY);
+    glUniform1f(uniform_emissivity, emissivity);
     
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
@@ -192,23 +191,45 @@ void setVolume() {
 
     float rmax = RAND_MAX;
     srand(time(NULL));
+    
+    float dist = 0;
+    float cx = VOLUME_TEX_SIZE / 2.0f;
+    float cy = VOLUME_TEX_SIZE / 2.0f;
+    float cz = VOLUME_TEX_SIZE / 2.0f;
+    float normalization = VOLUME_TEX_SIZE / 2.0f;
+    int intensity;
+    int index;
+    
 	for(int x = 0; x < VOLUME_TEX_SIZE; x++) {
         for(int y = 0; y < VOLUME_TEX_SIZE; y++) {
             for(int z = 0; z < VOLUME_TEX_SIZE; z++) {
+                index = (x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4);
                 
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 0] = 127 * (rand() / rmax);
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 1] = 127 * (rand() / rmax);
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 2] = 127 * (rand() / rmax);
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 3] = 0;
+                data[index + 0] = 127 * (rand() / rmax);
+                data[index + 1] = 127 * (rand() / rmax);
+                data[index + 2] = 127 * (rand() / rmax);
+                data[index + 3] = 127;
+                
+                dist = sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy) + (z - cz) * (z - cz)) / normalization;
+                
+                if (dist < 0.5) {
+                    intensity = (int) (127 * (2 - dist));
+                    data[index + 0] = 0;
+                    data[index + 1] = 0;
+                    data[index + 2] = intensity;
+                    data[index + 3] = 127;
+                }
             }
         }
     }
     
     
     
-	glPixelStorei(GL_UNPACK_ALIGNMENT,1);
+//	glPixelStorei(GL_UNPACK_ALIGNMENT,1);
 	glGenTextures(1, &volumeTexture);
-	glBindTexture(GL_TEXTURE_3D, volumeTexture);
+    
+    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0 + 1, 1);
+//	glBindTexture(GL_TEXTURE_3D, volumeTexture);
     
     setTexture3DParam();
     
@@ -405,6 +426,10 @@ void reshape_ortho(int w, int h)
 }
 
 
+bool drawBack = false;
+bool drawFront = false;
+bool drawRays = false;
+
 static void keyboard(unsigned char key, int x, int y)
 {
     switch (key) {
@@ -412,6 +437,21 @@ static void keyboard(unsigned char key, int x, int y)
         case 'Q':
         case 'q':
             exit(EXIT_SUCCESS);
+            break;
+        case '1':
+            drawBack = drawBack == 0 ? 1 : 0;
+            drawFront = drawBack == 1 ? 0 : drawFront;
+            drawRays = drawBack == 1 ? 0 : drawRays;
+            break;
+        case '2':
+            drawFront = drawFront == 0 ? 1 : 0;
+            drawBack = drawFront == 1 ? 0 : drawBack;
+            drawRays = drawBack == 1 ? 0 : drawRays;
+            break;
+        case '3':
+            drawRays = drawRays == 0 ? 1 : 0;
+            drawBack = drawRays == 1 ? 0 : drawBack;
+            drawFront = drawRays == 1 ? 0 : drawFront;
             break;
         default:
             break;
@@ -459,6 +499,18 @@ void mouseMotion(int x, int y) {
             axis[2] = lastPos[0]*curPos[1] - lastPos[1]*curPos[0];
         }
     }
+    
+    if (rightMouseDown) {
+        trackball_ptov(x, y, width, height, curPos);
+        dy = curPos[1] - lastPos[1];
+        if (dy > 0)
+            emissivity += 0.001;
+        else if (dy < 0)
+            emissivity -= 0.001;
+        
+        lastPos[1] = curPos[1];
+    }
+    
     glutPostRedisplay();
 }
 
@@ -490,9 +542,18 @@ void stopMotion(int x, int y) {
     }
 }
 
+bool rightMouseDown = false;
 void mouseButton(int button, int state, int x, int y)
 {
-    if (button == GLUT_RIGHT_BUTTON) exit(0);
+    if (button == GLUT_RIGHT_BUTTON) switch(state)
+    {
+        case GLUT_DOWN:
+            rightMouseDown = true;
+            break;
+        case GLUT_UP:
+            rightMouseDown = false;
+            break;
+    }
     if (button == GLUT_MIDDLE_BUTTON) trackballMove = false;
     if (button == GLUT_LEFT_BUTTON) switch(state)
     {

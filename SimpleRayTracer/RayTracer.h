@@ -12,6 +12,10 @@
 #include "ShaderUtil.h"
 #include "GLUtil.h"
 
+#define bool int
+#define false 0
+#define true 1
+
 void draw();
 void drawQuads(float p);
 void drawFullscreenQuad();
@@ -38,5 +42,9 @@ void enable_renderbuffers();
 void disable_renderbuffers();
 
 void init();
+
+// Vars
+bool drawBack, drawFront, drawRays;
+bool rightMouseDown;
 
 #endif

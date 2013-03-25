@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleRayTracer/RayTracer.c"
-         timestampString = "385873377.238943"
+         timestampString = "385911137.450027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "528"
-         endingLineNumber = "528"
+         startingLineNumber = "589"
+         endingLineNumber = "589"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -21,22 +21,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleRayTracer/RayTracer.c"
-         timestampString = "385836000.677872"
+         timestampString = "385910491.278359"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "21"
-         endingLineNumber = "21">
+         startingLineNumber = "20"
+         endingLineNumber = "20">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleRayTracer/RayTracer.c"
-         timestampString = "385873377.238943"
+         timestampString = "385911137.450027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "229"
+         endingLineNumber = "229"
          landmarkName = "setVolume()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -45,11 +45,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleRayTracer/RayTracer.c"
-         timestampString = "385873377.238943"
+         timestampString = "385911137.450027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
+         startingLineNumber = "227"
+         endingLineNumber = "227"
          landmarkName = "setVolume()"
          landmarkType = "7">
       </FileBreakpoint>
