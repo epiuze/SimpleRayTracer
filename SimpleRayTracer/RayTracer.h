@@ -19,7 +19,14 @@ void drawFullscreenQuad();
 void renderBackFace();
 void renderRayCast();
 void vertex(float x, float y, float z);
-void setTexture3DParam(int activeSamplerTexture);
+
+//void bindTexture(GLuint texture, GLuint textureUnit, GLuint textureType);
+void bindTexture(GLuint texture, GLuint textureUnit, GLuint textureType, GLenum activeTexture);
+
+void setTexture3DParam();
+void reshape_ortho(int w, int h);
+static void reshape(int w, int h);
+
 void setVolume();
 void initShaders();
 void renderScreen();
@@ -31,9 +38,5 @@ void enable_renderbuffers();
 void disable_renderbuffers();
 
 void init();
-
-static void reshape(int w, int h);
-static void keyboard(unsigned char key, int x, int y);
-
 
 #endif

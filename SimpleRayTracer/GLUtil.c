@@ -10,7 +10,8 @@
 #include <stdlib.h>
 #include "GLUtil.h"
 
-GLuint CLAMP_MODE = GL_CLAMP_TO_EDGE;
+GLuint CLAMP_MODE = GL_CLAMP_TO_BORDER;
+//GLuint CLAMP_MODE = GL_CLAMP_TO_EDGE;
 //	private int TEX_FILTER = GL2.GL_LINEAR;
 GLuint TEX_ENV = GL_REPLACE;
 //	private int TEX_ENV = GL2.GL_BLEND;

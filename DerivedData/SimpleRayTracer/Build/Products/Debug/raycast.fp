@@ -11,7 +11,12 @@ uniform int rayDepth;
 
 void main()
 {
-	
+
+//	if (drawBack == 1) {
+//		gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+//		return;
+//	}
+
 	// GPU Ray tracing algorithm
 	// Described in Marques, Santos, Leskovky & Paloc. GPU Ray Casting
 	// Alpha blending equation is used

@@ -18,13 +18,15 @@
 #define false 0
 #define true 1
 
-GLuint width = 500;
-GLuint height= 500;
+static GLuint width = 500;
+static GLuint height= 500;
 
-float   angle = 0.0, axis[3], trans[3];
-bool    trackingMouse = false;
-bool    redrawContinue = false;
-bool    trackballMove = false;
+GLuint sampler = 0;
+
+float angle = 0.0, axis[3], trans[3];
+bool trackingMouse = false;
+bool redrawContinue = false;
+bool trackballMove = false;
 
 #define VOLUME_TEX_SIZE 128
 int size = VOLUME_TEX_SIZE*VOLUME_TEX_SIZE*VOLUME_TEX_SIZE* 4;
@@ -61,72 +63,62 @@ void drawTestTriangle() {
     glVertex2d(1, -1);
     glEnd();
     glPopMatrix();
+    
+    glPointSize(10.0f);
+    glBegin(GL_POINTS);
+    glVertex3d(0, 0, 0);
+    glEnd();
+            
 }
 
 void draw() {
     
-    glClearColor(1, 1, 1, 1);
-    
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    if(trackballMove) glRotatef(angle, axis[0], axis[1], axis[2]);
+//    glMatrixMode(GL_PROJECTION);
 
-//    glTranslated(0, 0, 5);
-//    glUseProgram(passthroughProgram);
-    glUseProgram(shaderProgram);
+    reshape(width, height);
+    
+    glLoadIdentity();
 
-//    drawTestTriangle();
+    glUseProgram(passthroughProgram);
 
+    gluLookAt (0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    glRotatef(angle, axis[0], axis[1], axis[2]);
+    drawTestTriangle();
+    
     // Enable the render buffers
     enable_renderbuffers();
-
-//    glLoadIdentity();
     
     renderBackFace();
-    
+
     renderRayCast();
     
     disable_renderbuffers();
 
+    glPushMatrix();
     renderScreen();
+    glPopMatrix();
     
     // Done!
     glutSwapBuffers();
 }
 
 void renderScreen() {
-    //
-    //    // Disable the render buffer
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    
+//	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glLoadIdentity();
     
     // Render buffer to screen
     glEnable(GL_TEXTURE_2D);
-    
     glBindTexture(GL_TEXTURE_2D, imageTexture);
+//    glBindTexture(GL_TEXTURE_2D, backfaceTexture);
     
-    glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
+    reshape_ortho(width, height);
     
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glViewport(0, 0, width, height);
-    
-    gluOrtho2D(0, 1, 0, 1);
-    
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    
-    // Draw raycast quad
     glDisable(GL_DEPTH_TEST);
     drawFullscreenQuad();
-    
-    glEnable(GL_DEPTH_TEST);
     glDisable(GL_TEXTURE_2D);
-    
-    glMatrixMode(GL_PROJECTION);
-    glPopMatrix();
-    glMatrixMode(GL_MODELVIEW);
-    glPopMatrix();
 
 }
 
@@ -136,45 +128,52 @@ void renderBackFace() {
     glEnable(GL_CULL_FACE);
     glCullFace(GL_FRONT);
     
+    glScaled(2, 2, 2);
+    glTranslated(-0.5, -0.5, -0.5);
     drawQuads(1);
     
     glDisable(GL_CULL_FACE);
 }
 
-void renderRayCast() {
-    //    glUniform1f(timeParam, glutGet(GLUT_ELAPSED_TIME));
+void bindTexture(GLuint texture, GLenum textureType, GLenum activeTexture, GLuint samplerUnit) {
+    glActiveTexture(activeTexture);
     
+    // Might need to bind the sampler first?
+    // using e.g. glGenSamplers(1, &uiSampler) where GLuint uiSampler.
+
+    glBindTexture(textureType + samplerUnit, texture);
+    
+    glBindSampler(samplerUnit, sampler);
+
+}
+
+void renderRayCast() {
+
+    // Render directly to the image texture
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, imageTexture, 0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     
-    // Assign sampler IDs
-    // note: those are NOT the same as texture IDs
-    // they are 0, 1, ..., n corresponding to the GLSL texture IDs
-    // they are the glActiveTexture(CurrentTextureUnit + SamplerID)
-    // Set the texture units
-    glUniform1i(uniform_tex, 0);
-    glUniform1i(uniform_volume_tex, 1);
+    glUseProgram(shaderProgram);
     
     // Bind the samplers
+    GLuint volumeTextureUnit = 0;
+    glUniform1i(uniform_volume_tex, volumeTextureUnit);
+    bindTexture(volumeTexture, GL_TEXTURE_3D, GL_TEXTURE0, volumeTextureUnit);
     
-    glActiveTexture(GL_TEXTURE0 + 0);
-    glBindTexture(GL_TEXTURE_3D, volumeTexture);
-    glBindSampler(0, volumeTexture);
+    GLuint backTextureUnit = 1;
+    glUniform1i(uniform_tex, backTextureUnit);
+    bindTexture(backfaceTexture, GL_TEXTURE_2D, GL_TEXTURE0, backTextureUnit);
     
-    glActiveTexture(GL_TEXTURE0 + 1);
-    glBindTexture(GL_TEXTURE_2D, backfaceTexture);
-    glBindSampler(2, backfaceTexture);
-    
-    // Default resolution:
+    glUniform1i(uniform_drawBack, 0);
+    glUniform1i(uniform_drawFront, 0);
+    glUniform1i(uniform_drawRays, 0);
+
+    // Set uniforms
     glUniform1f(uniform_stepSize, DEFAULT_STEP_SIZE);
     glUniform1f(uniform_scale, DEFAULT_SCALE);
     glUniform1f(uniform_epsilon, 0);
     glUniform1i(uniform_rayDepth, DEFAULT_DEPTH);
     glUniform1f(uniform_emissivity, DEFAULT_EMISSIVITY);
-    
-    glUniform1i(uniform_drawBack, 0);
-    glUniform1i(uniform_drawFront, 0);
-    glUniform1i(uniform_drawRays, 1);
     
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
@@ -182,6 +181,8 @@ void renderRayCast() {
     drawQuads(1.0f);
     
     glDisable(GL_CULL_FACE);
+    
+    glUseProgram(passthroughProgram);
 }
 
 // create a test volume texture, here you could load your own volume
@@ -195,10 +196,10 @@ void setVolume() {
         for(int y = 0; y < VOLUME_TEX_SIZE; y++) {
             for(int z = 0; z < VOLUME_TEX_SIZE; z++) {
                 
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 0] = 255 * (rand() / rmax);
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 1] = 255 * (rand() / rmax);
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 2] = 255 * (rand() / rmax);
-                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 3] = 255 * (rand() / rmax);
+                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 0] = 127 * (rand() / rmax);
+                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 1] = 127 * (rand() / rmax);
+                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 2] = 127 * (rand() / rmax);
+                data[(x*4) + (y * VOLUME_TEX_SIZE * 4) + (z * VOLUME_TEX_SIZE * VOLUME_TEX_SIZE * 4) + 3] = 0;
             }
         }
     }
@@ -208,18 +209,15 @@ void setVolume() {
 	glPixelStorei(GL_UNPACK_ALIGNMENT,1);
 	glGenTextures(1, &volumeTexture);
 	glBindTexture(GL_TEXTURE_3D, volumeTexture);
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_BORDER);
+    
+    setTexture3DParam();
+    
 	glTexImage3D(GL_TEXTURE_3D, 0,GL_RGBA, VOLUME_TEX_SIZE, VOLUME_TEX_SIZE,VOLUME_TEX_SIZE,0, GL_RGBA, GL_UNSIGNED_BYTE,data);
     
     free(data);
 }
 
-void setTexture3DParam(int activeSamplerTexture) {
+void setTexture3DParam() {
     
     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
     glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -270,7 +268,7 @@ void vertex(float x, float y, float z) {
 
 void drawQuads(float p)
 {
-    glPushMatrix();
+//    glPushMatrix();
     
     float x = p;
     float y = p;
@@ -278,59 +276,55 @@ void drawQuads(float p)
     
     glBegin(GL_QUADS);
     /* Back side */
-    glNormal3f(0.0f, 0.0f, -1.0f);
+//    glNormal3f(0.0f, 0.0f, -1.0f);
     vertex(0.0f, 0.0f, 0.0f);
     vertex(0.0f, y, 0.0f);
     vertex(x, y, 0.0f);
     vertex(x, 0.0f, 0.0f);
     
     /* Front side */
-    glNormal3f(0.0f, 0.0f, 1.0f);
+//    glNormal3f(0.0f, 0.0f, 1.0f);
     vertex(0.0f, 0.0f, z);
     vertex(x, 0.0f, z);
     vertex(x, y, z);
     vertex(0.0f, y, z);
     
     /* Top side */
-    glNormal3f(0.0f, 1.0f, 0.0f);
+//    glNormal3f(0.0f, 1.0f, 0.0f);
     vertex(0.0f, y, 0.0f);
     vertex(0.0f, y, z);
     vertex(x, y, z);
     vertex(x, y, 0.0f);
     
     /* Bottom side */
-    glNormal3f(0.0f, -1.0f, 0.0f);
+//    glNormal3f(0.0f, -1.0f, 0.0f);
     vertex(0.0f, 0.0f, 0.0f);
     vertex(x, 0.0f, 0.0f);
     vertex(x, 0.0f, z);
     vertex(0.0f, 0.0f, z);
     
     /* Left side */
-    glNormal3f(-1.0f, 0.0f, 0.0f);
+//    glNormal3f(-1.0f, 0.0f, 0.0f);
     vertex(0.0f, 0.0f, 0.0f);
     vertex(0.0f, 0.0f, z);
     vertex(0.0f, y, z);
     vertex(0.0f, y, 0.0f);
     
     /* Right side */
-    glNormal3f(1.0f, 0.0f, 0.0f);
+//    glNormal3f(1.0f, 0.0f, 0.0f);
     vertex(x, 0.0f, 0.0f);
     vertex(x, y, 0.0f);
     vertex(x, y, z);
     vertex(x, 0.0f, z);
     glEnd();
     
-    glPopMatrix();
+//    glPopMatrix();
 }
 
 
 void init() {
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glClearColor (0.0,0.0,0.0,1.0);
     
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(-0.75,0.75,-0.75,0.75,-5.5,5.5);
-
     glEnable(GL_LINE_SMOOTH);
     glEnable(GL_POINT_SMOOTH);
     
@@ -341,11 +335,13 @@ void init() {
 
 void initShaders() {
     // Initialize shaders
-    shaderProgram = initShader("./raycast.vp", "./raycast.fp");
 //    passthroughProgram = initShader("./passThrough.vp", "./passThrough.fp");
 
     // Initialize buffers
-    
+
+    // Generate a sampler
+    glGenSamplers(1 , &sampler);
+
     // Create frame buffer
     frameBuffer = genbindFrameBuffer();
     
@@ -367,6 +363,7 @@ void initShaders() {
     setVolume();
     
     // Set uniforms
+    shaderProgram = initShader("./raycast.vp", "./raycast.fp");
     uniform_tex = glGetUniformLocation(shaderProgram, "tex");
     uniform_volume_tex = glGetUniformLocation(shaderProgram, "volume_tex");
     uniform_stepSize = glGetUniformLocation(shaderProgram, "stepSize");
@@ -377,23 +374,36 @@ void initShaders() {
     uniform_drawRays = glGetUniformLocation(shaderProgram, "drawRays");
     uniform_drawFront = glGetUniformLocation(shaderProgram, "drawFront");
     uniform_rayDepth = glGetUniformLocation(shaderProgram, "rayDepth");
-    
+        
     printf("Shaders initialized successfully!\n");
 }
 
 static void reshape(int w, int h)
 {
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(-0.75,0.75,-0.75,0.75,-5.5,5.5);
-    
-    glViewport(0, 0, w, h);
-    glutPostRedisplay();
-    
     // Update dimension
     width = w;
     height = h;
+    
+    glViewport (0, 0, (GLsizei)w, (GLsizei)h);
+    glMatrixMode (GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective (60, (GLfloat)w / (GLfloat)h, 1.0, 100.0);
+    glMatrixMode (GL_MODELVIEW);
+    
+    gluLookAt (0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+
+    glutPostRedisplay();
 }
+
+void reshape_ortho(int w, int h)
+{
+	glViewport(0, 0,w,h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(0, 1, 0, 1);
+	glMatrixMode(GL_MODELVIEW);
+}
+
 
 static void keyboard(unsigned char key, int x, int y)
 {
@@ -416,9 +426,7 @@ float lastPos[3] = {0.0F, 0.0F, 0.0F};
 int curx, cury;
 int startX, startY;
 
-void
-trackball_ptov(int x, int y, int width, int height, float v[3])
-{
+void trackball_ptov(int x, int y, int width, int height, float v[3]) {
     float d, a;
     
     /* project x,y onto a hemi-sphere centered within width, height */
@@ -433,14 +441,12 @@ trackball_ptov(int x, int y, int width, int height, float v[3])
 }
 
 
-void
-mouseMotion(int x, int y)
-{
+void mouseMotion(int x, int y) {
     float curPos[3], dx, dy, dz;
     
-    trackball_ptov(x, y, width, height, curPos);
     if(trackingMouse)
     {
+        trackball_ptov(x, y, width, height, curPos);
         dx = curPos[0] - lastPos[0];
         dy = curPos[1] - lastPos[1];
         dz = curPos[2] - lastPos[2];
@@ -451,31 +457,28 @@ mouseMotion(int x, int y)
             axis[0] = lastPos[1]*curPos[2] - lastPos[2]*curPos[1];
             axis[1] = lastPos[2]*curPos[0] - lastPos[0]*curPos[2];
             axis[2] = lastPos[0]*curPos[1] - lastPos[1]*curPos[0];
-            
-            lastPos[0] = curPos[0];
-            lastPos[1] = curPos[1];
-            lastPos[2] = curPos[2];
         }
     }
     glutPostRedisplay();
 }
 
-void
-startMotion(int x, int y)
-{
-    
+void startMotion(int x, int y) {
     trackingMouse = true;
     redrawContinue = false;
     startX = x; startY = y;
     curx = x; cury = y;
     trackball_ptov(x, y, width, height, lastPos);
 	trackballMove=true;
+    
+    float curPos[3];
+    trackball_ptov(x, y, width, height, curPos);
+    lastPos[0] = curPos[0];
+    lastPos[1] = curPos[1];
+    lastPos[2] = curPos[2];
+
 }
 
-void
-stopMotion(int x, int y)
-{
-    
+void stopMotion(int x, int y) {
     trackingMouse = false;
     
     if (startX != x || startY != y) {
@@ -489,9 +492,9 @@ stopMotion(int x, int y)
 
 void mouseButton(int button, int state, int x, int y)
 {
-    if(button==GLUT_RIGHT_BUTTON) exit(0);
-    if(button==GLUT_MIDDLE_BUTTON) trackballMove = false;
-    if(button==GLUT_LEFT_BUTTON) switch(state)
+    if (button == GLUT_RIGHT_BUTTON) exit(0);
+    if (button == GLUT_MIDDLE_BUTTON) trackballMove = false;
+    if (button == GLUT_LEFT_BUTTON) switch(state)
     {
         case GLUT_DOWN:
             y=height-y;

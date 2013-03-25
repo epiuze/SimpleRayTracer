@@ -52,7 +52,7 @@ t1362965647
 s12425
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.o
-t1364142518
+t1364179224
 s5288
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLWindow.o
@@ -60,8 +60,8 @@ t1364090262
 s6632
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.o
-t1364143726
-s24944
+t1364180608
+s25844
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/ShaderUtil.o
 t1364139083
@@ -97,8 +97,8 @@ t2
 s0
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer
-t1364143726
-s28652
+t1364180608
+s29188
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/passThrough.fp
 t1364139095
@@ -109,17 +109,17 @@ t1364139095
 s391
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp
-t1364092153
-s2100
+t1364180500
+s2186
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp
-t1364092153
-s204
+t1364173564
+s205
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.c
-c00000000514F286F0000000000000757
-t1364142191
-s1879
+c00000000514FB8590000000000000781
+t1364179033
+s1921
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.h
 c00000000514F27BE00000000000002A0
@@ -138,16 +138,17 @@ i<GL/glew.h>
 i<GL/glut.h>
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c
-c00000000514F2E8F00000000000034B7
-t1364143759
-s13495
+c00000000514FBE870000000000003486
+t1364180615
+s13446
 i"RayTracer.h"
 i"GLUtil.h"
+i<math.h>
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.h
-c00000000514F2BF60000000000000345
-t1364143094
-s837
+c00000000514FB98C00000000000003C5
+t1364179340
+s965
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/ShaderUtil.c
 c00000000514F1C020000000000000E06
@@ -212,14 +213,14 @@ t1363919656
 s391
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/raycast.fp
-c0000000050B0F7300000000000000834
-t1353774896
-s2100
+c00000000514FBE11000000000000088A
+t1364180497
+s2186
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/raycast.vp
-c0000000050B0F73000000000000000CC
-t1353774896
-s204
+c00000000514FA2F900000000000000CD
+t1364173561
+s205
 
 N/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/shaderUtil.c
 c00000000514BC3CA00000000000019ED
@@ -266,11 +267,11 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesae7f3f0f66ffb641^0dfb410f66ffb641^---0#1#0#--18"Check dependencies36"FF7DCEDA-FDB8-44CE-8349-FA7A8D011320-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies11fe0509f6ffb641^64950609f6ffb641^---0#1#0#--18"Check dependencies36"1A4396B1-7031-4FD3-A1E3-63F993F77B5F-
 
 CCompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s385835318.386322
-e385835318.461892
+s385872024.372036
+e385872024.542318
 r1
 xCompileC
 xDerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.o
@@ -279,7 +280,7 @@ xnormal
 xx86_64
 xc
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.c8509633661ffb641^1805793661ffb641^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.c0000000000000000^3654"CompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.o SimpleRayTracer/GLUtil.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-generated-files.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-own-target-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-all-target-headers.hmap -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-project-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources/x86_64 -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources -F/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -MMD -MT dependencies -MF /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.d --serialize-diagnostics /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.dia -c /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.c -o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.o36"8B70C72A-2F54-4231-B20B-44D4085948D3-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.ca5665f98f0ffb641^11e28a98f0ffb641^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.c0000000000000000^3654"CompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.o SimpleRayTracer/GLUtil.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-generated-files.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-own-target-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-all-target-headers.hmap -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-project-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources/x86_64 -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources -F/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -MMD -MT dependencies -MF /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.d --serialize-diagnostics /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.dia -c /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLUtil.c -o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLUtil.o36"7757EF98-F4DA-4AAA-8CB4-FE078897D03F-
 
 CCompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLWindow.o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLWindow.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
 s385783062.532463
@@ -295,8 +296,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLWindow.c0d71881695feb641^7ae2a11695feb641^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLWindow.c0000000000000000^3666"CompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLWindow.o SimpleRayTracer/GLWindow.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-generated-files.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-own-target-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-all-target-headers.hmap -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-project-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources/x86_64 -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources -F/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -MMD -MT dependencies -MF /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLWindow.d --serialize-diagnostics /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLWindow.dia -c /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/GLWindow.c -o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/GLWindow.o36"1554D187-6EA0-43F5-B585-49DBFDB6471A-
 
 CCompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s385836559.253235
-e385836559.350155
+s385873417.028090
+e385873417.111692
 r1
 xCompileC
 xDerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.o
@@ -305,14 +306,17 @@ xnormal
 xx86_64
 xc
 xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:162:5: warning: implicit declaration of function 'glBindSampler' is invalid in C99 [-Wimplicit-function-declaration]
-o    glBindSampler(0, volumeTexture);
+o/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:146:5: warning: implicit declaration of function 'glBindSampler' is invalid in C99 [-Wimplicit-function-declaration]
+o    glBindSampler(samplerUnit, sampler);
 o    ^
-o/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:193:11: warning: implicit declaration of function 'time' is invalid in C99 [-Wimplicit-function-declaration]
+o/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:194:11: warning: implicit declaration of function 'time' is invalid in C99 [-Wimplicit-function-declaration]
 o    srand(time(NULL));
 o          ^
-o2 warnings generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c1bf5400f66ffb641^9ca4590f66ffb641^-520"/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:162:5: warning: implicit declaration of function 'glBindSampler' is invalid in C99 [-Wimplicit-function-declaration]    glBindSampler(0, volumeTexture);    ^/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:193:11: warning: implicit declaration of function 'time' is invalid in C99 [-Wimplicit-function-declaration]    srand(time(NULL));          ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@66"Implicit declaration of function 'glBindSampler' is invalid in C99-385836559#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@112"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c0000000000000000^161#4#161#4#3705#0#14"Semantic Issue--2@57"Implicit declaration of function 'time' is invalid in C99-385836559#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@112"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c0000000000000000^192#10#192#10#4630#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation4@112"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c0000000000000000^3672"CompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.o SimpleRayTracer/RayTracer.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-generated-files.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-own-target-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-all-target-headers.hmap -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-project-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources/x86_64 -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources -F/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -MMD -MT dependencies -MF /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.d --serialize-diagnostics /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.dia -c /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c -o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.o36"84E416B9-4EC1-4468-B02D-EE747950237F-
+o/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:343:5: warning: implicit declaration of function 'glGenSamplers' is invalid in C99 [-Wimplicit-function-declaration]
+o    glGenSamplers(1 , &sampler);
+o    ^
+o3 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.ca0500709f6ffb641^c3a01c09f6ffb641^-777"/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:146:5: warning: implicit declaration of function 'glBindSampler' is invalid in C99 [-Wimplicit-function-declaration]    glBindSampler(samplerUnit, sampler);    ^/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:194:11: warning: implicit declaration of function 'time' is invalid in C99 [-Wimplicit-function-declaration]    srand(time(NULL));          ^/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c:343:5: warning: implicit declaration of function 'glGenSamplers' is invalid in C99 [-Wimplicit-function-declaration]    glGenSamplers(1 , &sampler);    ^3 warnings generated.3(36%IDEClangDiagnosticActivityLogMessage2@66"Implicit declaration of function 'glBindSampler' is invalid in C99-385873417#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@112"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c0000000000000000^145#4#145#4#3238#0#14"Semantic Issue--2@57"Implicit declaration of function 'time' is invalid in C99-385873417#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@112"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c0000000000000000^193#10#193#10#4693#0#14"Semantic Issue--2@66"Implicit declaration of function 'glGenSamplers' is invalid in C99-385873417#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@112"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c0000000000000000^342#4#342#4#8423#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation4@112"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c0000000000000000^3672"CompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.o SimpleRayTracer/RayTracer.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-generated-files.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-own-target-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-all-target-headers.hmap -iquote /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/SimpleRayTracer-project-headers.hmap -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources/x86_64 -I/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/DerivedSources -F/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -MMD -MT dependencies -MF /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.d --serialize-diagnostics /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.dia -c /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/RayTracer.c -o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/RayTracer.o36"871C7D4B-B19E-4BB8-9F5E-9DAB1434BC7C-
 
 CCompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/ShaderUtil.o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/ShaderUtil.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
 s385831883.809225
@@ -379,14 +383,14 @@ CCompileC DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/
 r0
 
 CLd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer normal x86_64
-s385836559.369658
-e385836559.408677
+s385873417.118433
+e385873417.150538
 r1
 xLd
 x/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer
 xnormal
 xx86_64
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection138"Link /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer42055f0f66ffb641^739f680f66ffb641^---0#0#0#--1083"Ld DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer normal x86_64    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -F/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -filelist /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/SimpleRayTracer.LinkFileList -mmacosx-version-min=10.8 -framework GLUT -framework OpenGL -o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer36"45E65B3F-03E9-4050-B9CC-A9D97B52E7A3-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection138"Link /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracerd3681e09f6ffb641^618a2609f6ffb641^---0#0#0#--1083"Ld DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer normal x86_64    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -F/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug -filelist /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Intermediates/SimpleRayTracer.build/Debug/SimpleRayTracer.build/Objects-normal/x86_64/SimpleRayTracer.LinkFileList -mmacosx-version-min=10.8 -framework GLUT -framework OpenGL -o /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/SimpleRayTracer36"566D52BF-64F0-450D-8205-F9BBAB3DE560-
 
 CPBXCp SimpleRayTracer/passThrough.fp DerivedData/SimpleRayTracer/Build/Products/Debug/passThrough.fp
 s385831895.806398
@@ -407,20 +411,20 @@ xDerivedData/SimpleRayTracer/Build/Products/Debug/passThrough.vp
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Copy DerivedData/SimpleRayTracer/Build/Products/Debug/passThrough.vp9d80ced753ffb641^3cf6cfd753ffb641^---0#0#0#-19%DVTDocumentLocation2@148"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/passThrough.vp000000000080d041^507"PBXCp SimpleRayTracer/passThrough.vp DerivedData/SimpleRayTracer/Build/Products/Debug/passThrough.vp    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/passThrough.vp /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug36"32250158-5A2E-4BAA-BF54-168EA5F36D6C-
 
 CPBXCp SimpleRayTracer/raycast.fp DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp
-s385784953.341366
-e385784953.345871
+s385873300.367239
+e385873300.372263
 r1
 xPBXCp
 xSimpleRayTracer/raycast.fp
 xDerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp037c57799cfeb641^a69b58799cfeb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp000000000080d041^495"PBXCp SimpleRayTracer/raycast.fp DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/raycast.fp /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug36"2FAFE131-1AAB-4458-8DAE-836535AEB209-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp09175e94f5ffb641^7c645f94f5ffb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp0000000000000000^495"PBXCp SimpleRayTracer/raycast.fp DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.fp    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/raycast.fp /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug36"D1AA63A1-4647-4CA9-B1D2-49C74A1F8AA5-
 
 CPBXCp SimpleRayTracer/raycast.vp DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp
-s385784953.340760
-e385784953.345804
+s385866364.030064
+e385866364.062434
 r1
 xPBXCp
 xSimpleRayTracer/raycast.vp
 xDerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp1c5f57799cfeb641^469658799cfeb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp000000000080d041^495"PBXCp SimpleRayTracer/raycast.vp DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/raycast.vp /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug36"9D122976-FB49-4E5F-B8E4-424847F9B0BA-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vpcee0077cdaffb641^7009107cdaffb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp0000000000000000^495"PBXCp SimpleRayTracer/raycast.vp DerivedData/SimpleRayTracer/Build/Products/Debug/raycast.vp    cd /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/SimpleRayTracer/raycast.vp /Volumes/Cortex/Users/piuze/Documents/workspace_work/SimpleRayTracer/DerivedData/SimpleRayTracer/Build/Products/Debug36"9DA38E79-2BDD-485A-9AB9-92D8D6B478D1-
 
