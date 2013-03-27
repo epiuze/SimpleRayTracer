@@ -14,8 +14,10 @@
 #define DEFAULT_SCALE 3
 #define DEFAULT_EMISSIVITY 0.01
 #define DEFAULT_DEPTH 300
+#define DEFAULT_EPSILON 0;
 
 float emissivity = DEFAULT_EMISSIVITY;
+float epsilon = DEFAULT_EPSILON;
 
 static GLuint width = 800;
 static GLuint height= 800;
@@ -35,19 +37,19 @@ GLuint volumeTexture, backfaceTexture, imageTexture;
 
 GLuint backTextureUnit = 0, volumeTextureUnit = 1;
 
-GLuint passthroughProgram, shaderProgram;
+GLuint passthroughProgram, shaderProgram, bloomProgram;
 
 // uniforms
-GLuint uniform_tex;
-GLuint uniform_volume_tex;
-GLuint uniform_stepSize;
-GLuint uniform_emissivity;
-GLuint uniform_scale;
-GLuint uniform_epsilon;
-GLuint uniform_drawBack;
-GLuint uniform_drawRays;
-GLuint uniform_drawFront;
-GLuint uniform_rayDepth;
+GLint uniform_tex;
+GLint uniform_volume_tex;
+GLint uniform_stepSize;
+GLint uniform_emissivity;
+GLint uniform_scale;
+GLint uniform_epsilon;
+GLint uniform_drawBack;
+GLint uniform_drawRays;
+GLint uniform_drawFront;
+GLint uniform_rayDepth;
 
 //GLuint tmp1[1] = {};
 
@@ -82,11 +84,11 @@ void draw() {
     
     glLoadIdentity();
 
-    glUseProgram(passthroughProgram);
+    glUseProgram(0);
 
     gluLookAt (0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
     glRotatef(angle, axis[0], axis[1], axis[2]);
-    drawTestTriangle();
+//    drawTestTriangle();
     
     // Enable the render buffers
     enable_renderbuffers();
@@ -95,6 +97,9 @@ void draw() {
 
     renderRayCast();
     
+//    glUseProgram(passthroughProgram);
+    glUseProgram(0);
+
     disable_renderbuffers();
 
     glPushMatrix();
@@ -114,6 +119,11 @@ void renderScreen() {
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, imageTexture);
 //    glBindTexture(GL_TEXTURE_2D, backfaceTexture);
+    
+    glUseProgram(bloomProgram);
+    GLint uniform_bloom = glGetUniformLocation(bloomProgram, "bgl_RenderedTexture");
+    bindTexture(imageTexture, GL_TEXTURE_2D, 0, 0);
+    glUniform1i(bloomProgram, imageTexture);
     
     reshape_ortho(width, height);
     
@@ -170,7 +180,7 @@ void renderRayCast() {
     // Set uniforms
     glUniform1f(uniform_stepSize, DEFAULT_STEP_SIZE);
     glUniform1f(uniform_scale, DEFAULT_SCALE);
-    glUniform1f(uniform_epsilon, 0);
+    glUniform1f(uniform_epsilon, epsilon);
     glUniform1i(uniform_rayDepth, DEFAULT_DEPTH);
     glUniform1f(uniform_emissivity, emissivity);
     
@@ -180,8 +190,6 @@ void renderRayCast() {
     drawQuads(1.0f);
     
     glDisable(GL_CULL_FACE);
-    
-    glUseProgram(passthroughProgram);
 }
 
 // create a test volume texture, here you could load your own volume
@@ -214,7 +222,7 @@ void setVolume() {
                 data[index + 0] = 127 * (rand() / rmax);
                 data[index + 1] = 127 * (rand() / rmax);
                 data[index + 2] = 127 * (rand() / rmax);
-                data[index + 3] = 127;
+                data[index + 3] = 127 * (rand() / rmax);
                 
                 dist = sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy) + (z - cz) * (z - cz)) / normalization;
                 
@@ -361,9 +369,6 @@ void init() {
 }
 
 void initShaders() {
-    // Initialize shaders
-//    passthroughProgram = initShader("./passThrough.vp", "./passThrough.fp");
-
     // Initialize buffers
 
     // Generate a sampler
@@ -387,7 +392,11 @@ void initShaders() {
     // Create render buffer
     renderBuffer = genbindRenderBuffer(width, height);
     
-    // Set uniforms
+    // Initialize shaders and get uniform locations
+    passthroughProgram = initShader("./passThrough.vp", "./passThrough.fp");
+
+    bloomProgram = initShader("./passThrough.vp", "./bloom.fp");
+
     shaderProgram = initShader("./raycast.vp", "./raycast.fp");
     uniform_tex = glGetUniformLocation(shaderProgram, "tex");
     uniform_volume_tex = glGetUniformLocation(shaderProgram, "volume_tex");
@@ -484,6 +493,7 @@ void trackball_ptov(int x, int y, int width, int height, float v[3]) {
     v[2] *= a;
 }
 
+int mousePosxy[2];
 
 void mouseMotion(int x, int y) {
     float curPos[3], dx, dy, dz;
@@ -506,15 +516,38 @@ void mouseMotion(int x, int y) {
     
     if (rightMouseDown) {
         trackball_ptov(x, y, width, height, curPos);
-        dy = curPos[1] - lastPos[1];
+        dx = x - mousePosxy[0];
+        dy = y - mousePosxy[1];
+        
+        // Epsilon
+        if (dx > 0)
+            epsilon += 0.0001;
+        else if (dx < 0)
+            epsilon -= 0.0001;
+
+        if (epsilon < 0)
+            epsilon = 0;
+        
+        printf("%.4f\n", epsilon);
+        
+        // Emissivity
         if (dy > 0)
             emissivity += 0.001;
         else if (dy < 0)
             emissivity -= 0.001;
         
+        if (emissivity < 0)
+            emissivity = 0;
+
+        if (emissivity > 10)
+            emissivity = 10;
+
         lastPos[1] = curPos[1];
     }
     
+    mousePosxy[0] = x;
+    mousePosxy[1] = y;
+
     glutPostRedisplay();
 }
 

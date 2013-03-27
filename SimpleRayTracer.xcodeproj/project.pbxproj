@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920E807817022A4900273B78 /* bloom.fp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920E807717022A4600273B78 /* bloom.fp */; };
 		928D622316FF53D400C35551 /* passThrough.fp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92AAFF4816FE718E00C1F985 /* passThrough.fp */; };
 		928D622416FF53D500C35551 /* passThrough.vp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92AAFF4716FE716100C1F985 /* passThrough.vp */; };
 		92AAFF4B16FE8B8800C1F985 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AAFF4A16FE8B8800C1F985 /* OpenGL.framework */; };
@@ -27,6 +28,7 @@
 			files = (
 				92AAFF5516FE99A400C1F985 /* raycast.vp in CopyFiles */,
 				92AAFF5616FE99A900C1F985 /* raycast.fp in CopyFiles */,
+				920E807817022A4900273B78 /* bloom.fp in CopyFiles */,
 				928D622416FF53D500C35551 /* passThrough.vp in CopyFiles */,
 				928D622316FF53D400C35551 /* passThrough.fp in CopyFiles */,
 			);
@@ -35,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		920E807717022A4600273B78 /* bloom.fp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bloom.fp; sourceTree = "<group>"; };
 		92AAFF3816FE70B800C1F985 /* SimpleRayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleRayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AAFF3D16FE70B800C1F985 /* SimpleRayTracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SimpleRayTracer.1; sourceTree = "<group>"; };
 		92AAFF4516FE712C00C1F985 /* ShaderUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtil.c; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 				92AAFF4716FE716100C1F985 /* passThrough.vp */,
 				92AAFF4516FE712C00C1F985 /* ShaderUtil.c */,
 				92AAFF5416FE97E100C1F985 /* ShaderUtil.h */,
+				920E807717022A4600273B78 /* bloom.fp */,
 			);
 			name = shader;
 			sourceTree = "<group>";

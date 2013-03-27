@@ -38,6 +38,7 @@ char* readShaderSource(const char* shaderFile)
     fseek(fp, 0L, SEEK_SET);
     buf = (char*) malloc((size + 1) * sizeof(char));
     fread(buf, 1, size, fp);
+    buf[size] = '\0';
     fclose(fp);
     return buf;
 }
