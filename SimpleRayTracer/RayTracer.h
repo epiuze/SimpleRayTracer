@@ -27,6 +27,8 @@ void vertex(float x, float y, float z);
 //void bindTexture(GLuint texture, GLuint textureUnit, GLuint textureType);
 void bindTexture(GLuint texture, GLuint textureUnit, GLuint textureType, GLenum activeTexture);
 
+void drawText(const char* text, int px, int py);
+
 void setTexture3DParam();
 void reshape_ortho(int w, int h);
 static void reshape(int w, int h);

@@ -83,7 +83,8 @@ void main()
 		lengthAcc += stepSize;
 		i++;
 
-		if (voxelAlpha >= epsilon) {
+//		if (voxelAlpha >= epsilon) {
+		if (voxelAlpha > epsilon - 0.1 && voxelAlpha < epsilon + 0.1) {
 			// The 4 * emissivity factor was computed by hand to get good luminosity
 			colorAcc += (1.0 - alphaAcc) * voxelColor * scale * emissivity;
 			alphaAcc += (1.0 - alphaAcc) * emissivity;

@@ -106,8 +106,37 @@ void draw() {
     renderScreen();
     glPopMatrix();
     
+//    printf("%li\n", strlen(text));
+    char txt[50];
+    drawText(sprintf(txt, "Emissivity = %.2f", emissivity), 10, 20);
+    drawText("Two-pass Volume Rendering", 10, 10);
+    
     // Done!
     glutSwapBuffers();
+}
+
+void drawText(const char* text, int px, int py) {
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    gluOrtho2D(0.0, width, 0.0, height);
+    
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+    
+    glColor3f(0.0, 1.0, 0.0); // Green
+    glRasterPos2i(px, py);
+    
+    void * font = GLUT_BITMAP_9_BY_15;
+    for (int i = 0; i < strlen(text); i++) {
+        glutBitmapCharacter(font, text[i]);
+    }
+    glMatrixMode(GL_MODELVIEW);
+    glPopMatrix();
+    
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
 }
 
 void renderScreen() {
@@ -119,11 +148,17 @@ void renderScreen() {
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, imageTexture);
 //    glBindTexture(GL_TEXTURE_2D, backfaceTexture);
+
+    bool useBloom = false;
     
-    glUseProgram(bloomProgram);
-    GLint uniform_bloom = glGetUniformLocation(bloomProgram, "bgl_RenderedTexture");
-    bindTexture(imageTexture, GL_TEXTURE_2D, 0, 0);
-    glUniform1i(bloomProgram, imageTexture);
+    if (useBloom) {
+        glUseProgram(bloomProgram);
+        GLint uniform_bloom = glGetUniformLocation(bloomProgram, "bgl_RenderedTexture");
+        bindTexture(imageTexture, GL_TEXTURE_2D, 0, 0);
+    }
+    else {
+        glUseProgram(0);
+    }
     
     reshape_ortho(width, height);
     
